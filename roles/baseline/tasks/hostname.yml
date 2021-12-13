@@ -1,0 +1,5 @@
+---
+
+- name: set hostname config
+  ansible.builtin.hostname:
+    name: "{{ inventory_hostname }}"

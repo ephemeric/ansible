@@ -1,0 +1,7 @@
+---
+
+- name: get debug vars
+  tags:
+    - debug
+  debug:
+    msg: "{{ ansible_local.splunk.general.installed }}"

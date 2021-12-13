@@ -1,0 +1,26 @@
+---
+
+- name: get service facts
+  service_facts:
+
+- name: set service disabled
+  become: True
+  systemd:
+    name: "{{ ansible_facts.services[item]['name'] }}"
+    enabled: False
+    state: stopped
+  loop: "{{ baseline.services.disabled }}"
+  when:
+    - ansible_facts.services[item] is defined
+    - ansible_facts.services[item]['status'] == 'enabled'
+
+- name: set service enabled
+  become: True
+  systemd:
+    name: "{{ ansible_facts.services[item]['name'] }}"
+    enabled: True
+    state: started
+  loop: "{{ baseline.services.enabled }}"
+  when:
+    - ansible_facts.services[item] is defined
+    - ansible_facts.services[item]['status'] == 'disabled'

@@ -1,0 +1,23 @@
+---
+
+- name: set facts directory
+  tags:
+    - facts
+  become: True
+  file:
+    path: /etc/ansible/facts.d/
+    state: directory
+
+- name: set facts file
+  tags:
+    - facts
+  become: True
+  copy:
+    src: etc/ansible/facts.d/splunk.fact
+    dest: /etc/ansible/facts.d/splunk.fact
+
+- name: set facts gather
+  tags:
+    - facts
+  become: True
+  setup:

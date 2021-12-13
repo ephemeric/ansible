@@ -1,0 +1,6 @@
+---
+
+#yum install policycoreutils-python-utils policycoreutils policycoreutils-python
+#semanage fcontext -a -t var_t "/splunk-data"
+#semanage fcontext -a -t var_log_t "/splunk-data/syslog(/.*)?"
+#restorecon -FRv /splunk-data

@@ -1,0 +1,49 @@
+---
+
+- name: set facts setup
+  tags:
+    - facts
+  ansible.builtin.include_tasks: facts.yml
+
+- name: set OS vars
+  tags:
+    - vars
+  ansible.builtin.include_tasks: vars.yml
+
+- name: get debug vars
+  tags:
+    - never
+  ansible.builtin.include_tasks: debug.yml
+
+- name: set packages install
+  ansible.builtin.include_tasks: packages.yml
+
+- name: set hostname config
+  ansible.builtin.include_tasks: hostname.yml
+
+- name: set users config
+  tags:
+    - users
+  ansible.builtin.include_tasks: users.yml
+
+- name: set sudo config
+  ansible.builtin.include_tasks: sudo.yml
+
+- name: set aliases config
+  tags:
+    - aliases
+  ansible.builtin.include_tasks: aliases.yml
+
+- name: set services config
+  ansible.builtin.include_tasks: services.yml
+
+- name: set SELinux config
+  ansible.builtin.include_tasks: selinux.yml
+
+- name: set GRUB config
+  ansible.builtin.include_tasks: grub.yml
+
+- name: set Splunk config
+  tags:
+    - splunk
+  ansible.builtin.include_tasks: splunk.yml

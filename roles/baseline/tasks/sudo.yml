@@ -1,0 +1,15 @@
+---
+
+- name: set sudoers config
+  tags: always
+  become: True
+  ansible.builtin.copy:
+    content: "{{ item.sudoers }}"
+    dest: "/etc/sudoers.d/{{ item.name }}"
+    owner: root
+    group: root
+    mode: 0400
+    validate: visudo -cf %s
+  loop: "{{ baseline.users }}"
+  when:
+    - item.sudoers != False

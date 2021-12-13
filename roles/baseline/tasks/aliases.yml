@@ -1,0 +1,12 @@
+---
+
+- name: set aliases config
+  tags:
+    - aliases
+  become: True
+  ansible.builtin.template:
+    src: etc/profile.d/baseline.sh
+    dest: /etc/profile.d/baseline.sh
+    owner: root
+    group: root
+    mode: 0644

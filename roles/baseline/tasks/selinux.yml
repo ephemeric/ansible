@@ -1,0 +1,7 @@
+---
+
+- name: set SELinux config
+  become: True
+  ansible.posix.selinux:
+    policy: targeted
+    state: enforcing

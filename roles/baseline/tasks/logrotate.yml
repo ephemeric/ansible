@@ -1,0 +1,14 @@
+---
+
+/var/log/fortigate {
+    nocreate
+    missingok
+    hourly
+    rotate 5
+    compress
+    maxsize 10k
+    dateext
+    postrotate
+        echo "slobwashere" >>/tmp/fortigate.lgrt
+    endscript
+}

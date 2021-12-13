@@ -1,0 +1,57 @@
+---
+
+- name: set archive file
+  tags:
+    - splunk
+  become: True
+  ansible.builtin.unarchive:
+    src: "{{ splunk.archive.file }}"
+    dest: /opt
+    owner: splunk
+    group: splunk
+    creates: /opt/splunk
+
+- name: set user-seed.conf file
+  tags:
+    - splunk
+  become: True
+  ansible.builtin.copy:
+    src: opt/splunk/etc/system/local/user-seed.conf
+    dest: /opt/splunk/etc/system/local/user-seed.conf
+    owner: splunk
+    group: splunk
+  when:
+    - ansible_local.splunk.general.installed | bool == False
+
+- name: set splunk-launch.conf file
+  tags:
+    - splunk
+  become: True
+  ansible.builtin.template:
+    src: opt/splunk/etc/splunk-launch.conf
+    dest: /opt/splunk/etc/splunk-launch.conf
+    owner: splunk
+    group: splunk
+  notify: splunk
+
+- name: set Systemd service
+  tags:
+    - splunk
+  become: True
+  environment:
+    RANDFILE: /opt/splunk/.rnd
+  ansible.builtin.command:
+    cmd: /opt/splunk/bin/splunk enable boot-start -systemd-managed 1 -user splunk -group splunk --accept-license 
+    creates: /etc/systemd/system/splunkd.service
+  notify: splunk
+
+- name: set install fact
+  tags:
+    - slob
+  become: True
+  ansible.builtin.lineinfile:
+    backup: True
+    create: True
+    path: /etc/ansible/facts.d/splunk.fact
+    regexp: '^installed\s=\s.*$'
+    line: 'installed = True'

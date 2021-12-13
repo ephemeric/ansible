@@ -1,0 +1,11 @@
+---
+
+- name: set THPs disable
+  become: True
+  ansible.builtin.lineinfile:
+    backup: True
+    backrefs: True
+    path: /etc/default/grub
+    regexp: '^GRUB_CMDLINE_LINUX="((?!.*\btransparent_hugepage=never\b).*)"$'
+    line: 'GRUB_CMDLINE_LINUX="\1 transparent_hugepage=never"'
+  notify: grub

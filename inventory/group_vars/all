@@ -1,0 +1,52 @@
+baseline:
+  packages:
+    install:
+      - epel-release
+      - vim
+      - tcpdump
+      - zsh
+  services:
+    disabled:
+      - rpcbind.service
+      - slob.service
+    enabled:
+      - sshd.service
+      - slob.service
+  users:
+    - name: robertg
+      comment: "Robert Gabriel"
+      shell: /bin/zsh
+      home: /home/robertg
+      create_home: true
+      groups:
+        - ''
+      uid: ''
+      gid: ''
+      system: false
+      state: present
+      sudoers: |
+        robertg ALL=(ALL) NOPASSWD:ALL
+      authorized_key: |
+        ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEfW65k3s1uB63S5LGWc9Mh/w2L7mU9jHipKZAb1F/zc robert@imac.local
+
+    - name: splunk
+      comment: "Splunk User"
+      shell: /sbin/nologin
+      home: /opt/splunk
+      create_home: False
+      groups:
+        - ''
+      uid: ''
+      gid: ''
+      system: True
+      state: present
+      sudoers: False
+      #sudoers: |
+      #  Host_Alias SPL_HOSTS=spl-*
+      #  Cmnd_Alias SPL_CMND=/sbin/ss, /opt/splunk/bin/*
+      #  splunk SPL_HOSTS=(root) NOPASSWD:SPL_CMND
+      authorized_key: False
+
+splunk:
+  archive:
+    file: splunk-8.2.3-cd0848707637-Linux-x86_64.tgz

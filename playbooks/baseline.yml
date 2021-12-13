@@ -1,0 +1,17 @@
+---
+
+- name: set baseline config
+  hosts: all
+  gather_facts: False
+
+  pre_tasks:
+    - name: get limit arg
+      tags:
+        - always
+      fail:
+        msg: "usage: ansible-playbook playbooks/<playbook> -l|--limit"
+      run_once: true
+      when: ansible_limit is not defined
+
+  roles:
+    - baseline
