@@ -1,0 +1,15 @@
+---
+
+- name: set install epel-release
+  become: True
+  ansible.builtin.yum:
+    name: epel-release
+    update_cache: True
+    state: latest
+
+- name: set install packages
+  become: True
+  ansible.builtin.yum:
+    name: "{{ baseline.packages.install }}"
+    update_cache: True
+    state: latest
