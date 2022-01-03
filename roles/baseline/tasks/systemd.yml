@@ -1,0 +1,3 @@
+1000  mkdir /var/log/journal
+ 1001  systemd-tmpfiles --create --prefix /var/log/journal
+ 1002  systemctl restart systemd-journald

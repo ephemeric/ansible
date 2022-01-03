@@ -34,6 +34,9 @@
     group: splunk
   notify: splunk
 
+# Process: 6343 ExecStart=/etc/rc.d/init.d/splunk start (code=exited, status=0/SUCCESS): ulimit has no effect.
+# splunk$> /opt/splunk/bin/splunk start: ulimit applied.
+# systemctl start splunk.service: LimitNOFILE=65536 applied.
 - name: set Systemd service
   tags:
     - splunk
