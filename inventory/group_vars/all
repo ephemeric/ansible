@@ -5,13 +5,15 @@ baseline:
       - vim
       - tcpdump
       - zsh
+      - iptables-services
+    remove:
+      - rpcbind
   services:
     disabled:
       - rpcbind.service
-      - slob.service
     enabled:
       - sshd.service
-      - slob.service
+      - iptables.service
   users:
     - name: robertg
       comment: "Robert Gabriel"

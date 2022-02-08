@@ -13,3 +13,10 @@
     name: "{{ baseline.packages.install }}"
     update_cache: True
     state: latest
+
+- name: set remove packages
+  become: True
+  ansible.builtin.yum:
+    name: "{{ baseline.packages.remove }}"
+    update_cache: True
+    state: absent
