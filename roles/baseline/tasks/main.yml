@@ -34,6 +34,21 @@
     - aliases
   ansible.builtin.include_tasks: aliases.yml
 
+- name: set iptables config
+  tags:
+    - iptables
+  ansible.builtin.include_tasks: iptables.yml
+
+- name: set openssh config
+  tags:
+    - openssh
+  ansible.builtin.include_tasks: openssh.yml
+
+- name: set postfix config
+  tags:
+    - postfix
+  ansible.builtin.include_tasks: postfix.yml
+
 - name: set services config
   ansible.builtin.include_tasks: services.yml
 

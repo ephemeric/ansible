@@ -1,0 +1,14 @@
+---
+
+- name: set sshd_config file
+  tags:
+    - openssh
+  become: True
+  ansible.builtin.template:
+    src: etc/ssh/sshd_config
+    dest: /etc/ssh/sshd_config
+    owner: root
+    group: root
+    mode: 0600
+    validate: sshd -tf %s
+  notify: openssh

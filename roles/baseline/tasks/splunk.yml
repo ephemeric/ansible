@@ -41,16 +41,27 @@
   environment:
     RANDFILE: /opt/splunk/.rnd
   ansible.builtin.command:
+    # splunk start --accept-license  --no-prompt --answer-yes
     cmd: /opt/splunk/bin/splunk enable boot-start -systemd-managed 1 -user splunk -group splunk --accept-license 
     creates: /etc/systemd/system/splunkd.service
   notify: splunk
 
+#- name: set Systemd file
+#  tags:
+#    - splunk
+#become: True
+#ansible.builtin.lineinfile:
+  #backup: True
+  #path: /etc/systemd/system/splunkd.service
+  #regexp: '^ExecStart.*$'
+  #line: '\1 --accept-license --no-prompt --answer-yes'
+  #verify: systemd-analyze verify /etc/systemd/system/splunkd.service
+
 - name: set install fact
   tags:
-    - slob
+    - splunk
   become: True
   ansible.builtin.lineinfile:
-    backup: True
     create: True
     path: /etc/ansible/facts.d/splunk.fact
     regexp: '^installed\s=\s.*$'

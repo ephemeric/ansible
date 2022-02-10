@@ -11,3 +11,27 @@
     name: splunkd
     enabled: True
     state: restarted
+
+- name: iptables
+  become: True
+  ansible.builtin.systemd:
+    daemon_reload: True
+    name: iptables
+    enabled: True
+    state: restarted
+
+- name: openssh
+  become: True
+  ansible.builtin.systemd:
+    daemon_reload: True
+    name: sshd
+    enabled: True
+    state: restarted
+
+- name: postfix
+  become: True
+  ansible.builtin.systemd:
+    daemon_reload: True
+    name: postfix
+    enabled: True
+    state: restarted

@@ -1,0 +1,11 @@
+---
+
+- name: set inet_protocols config
+  tags:
+    - postfix
+  become: True
+  ansible.builtin.shell:
+    cmd: postconf inet_protocols | grep -q "ipv4" && echo "done" || postconf inet_protocols=ipv4
+  register: reg_postfix
+  changed_when: reg_postfix.stdout != 'done'
+  notify: postfix
