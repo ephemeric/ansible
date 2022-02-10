@@ -1,10 +1,6 @@
-[ephemeric]
-centos7-01.ephemeric.lan
-centos7-02.ephemeric.lan
-arch-01.ephemeric.lan
-
 [splunk]
-spl-shc-01.ephemeric.lan
+spl-sh-mac01.ephemeric.lan
+spl-sh-mac02.ephemeric.lan
 
 [cput]
 blv-splunk01-poc.cput.ac.za ansible_host=155.238.130.145

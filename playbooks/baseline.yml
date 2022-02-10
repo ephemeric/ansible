@@ -1,7 +1,8 @@
 ---
 
 - name: set baseline config
-  hosts: "{{ target_hosts | default('none') }}"
+  #hosts: "{{ target_hosts | default('none') }}"
+  hosts: all
   gather_facts: False
 
   pre_tasks:
