@@ -47,3 +47,5 @@
   tags:
     - splunk
   ansible.builtin.include_tasks: splunk.yml
+  when:
+    - ansible_local.splunk.general.installed | bool == False

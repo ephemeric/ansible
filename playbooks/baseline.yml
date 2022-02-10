@@ -1,6 +1,7 @@
 ---
 
 - name: set baseline config
+  # TODO: target_hosts?
   #hosts: "{{ target_hosts | default('none') }}"
   hosts: all
   gather_facts: False

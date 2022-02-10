@@ -4,7 +4,7 @@
   tags:
     - facts
   become: True
-  file:
+  ansible.builtin.file:
     path: /etc/ansible/facts.d/
     state: directory
 
@@ -12,9 +12,11 @@
   tags:
     - facts
   become: True
-  copy:
+  ansible.builtin.copy:
     src: etc/ansible/facts.d/splunk.fact
     dest: /etc/ansible/facts.d/splunk.fact
+    # The default is yes, which will replace the remote file when contents are different than the source. If no, the file will only be transferred if the destination does not exist.
+    force: no
 
 - name: set facts gather
   tags:

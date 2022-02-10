@@ -9,7 +9,6 @@
     dest: /opt
     owner: splunk
     group: splunk
-    creates: /opt/splunk
 
 - name: set user-seed.conf file
   tags:
@@ -20,8 +19,6 @@
     dest: /opt/splunk/etc/system/local/user-seed.conf
     owner: splunk
     group: splunk
-  when:
-    - ansible_local.splunk.general.installed | bool == False
 
 - name: set splunk-launch.conf file
   tags:
