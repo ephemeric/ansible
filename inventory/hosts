@@ -4,3 +4,16 @@ spl-sh-mac02.ephemeric.lan
 
 [cput]
 blv-splunk01-poc.cput.ac.za ansible_host=155.238.130.145
+
+[lab]
+lmdsmc.practical.lab
+sh.practical.lab
+cm.practical.lab
+idx1.practical.lab
+idx2.practical.lab
+idx3.practical.lab
+fwd1.practical.lab
+fwd2.practical.lab
+
+[lab:vars]
+#ansible_python_interpreter=/usr/bin/python3

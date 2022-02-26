@@ -1,0 +1,12 @@
+---
+
+# List.
+#VBoxManage list vms
+#VBoxManage list runningvms
+
+# DNS.
+# Use host /etc/hosts.
+#VBoxManage modifyvm centos_spl-sh-mac02_1639405613130_45935 --natdnshostresolver1 on
+
+# Start.
+#VBoxManage startvm e75c5035-1121-47c2-9109-1b7e8bef5fa4 --type headless

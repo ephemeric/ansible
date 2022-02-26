@@ -1,0 +1,13 @@
+---
+
+# Init.
+#splunk init shcluster-config -mgmt_uri https://spl-sh-mac02.ephemeric.lan:8089 -replication_port 34567 -replication_factor 1 -conf_deploy_fetch_url https://anc.ephemeric.lan:8089 -secret mykey -shcluster_label shcluster1
+
+# Bootstrap.
+#splunk bootstrap shcluster-captain -servers_list https://spl-sh-mac02.ephemeric.lan:8089
+
+# KV Store.
+#splunk show kvstore-status
+
+# Join cluster.
+#splunk edit cluster-config -mode searchhead -manager_uri https://10.160.31.200:8089 -secret your_key

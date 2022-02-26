@@ -18,4 +18,6 @@
 -A INPUT -p tcp -m state --state NEW -m tcp -m multiport --dports 22,8000 -j ACCEPT
 -A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 -A OUTPUT -o lo -p tcp -m tcp -m state --state NEW -m multiport --dports 8089,8191,8065 -j ACCEPT
+-A OUTPUT -p udp -m udp -m state --state NEW -m multiport --dports 53 -j ACCEPT
+-A OUTPUT -p icmp -j ACCEPT
 COMMIT
