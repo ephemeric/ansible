@@ -1,13 +1,32 @@
 ---
 
-# Init.
-#splunk init shcluster-config -mgmt_uri https://spl-sh-mac02.ephemeric.lan:8089 -replication_port 34567 -replication_factor 1 -conf_deploy_fetch_url https://anc.ephemeric.lan:8089 -secret mykey -shcluster_label shcluster1
+# Init member.
+splunk init shcluster-config -mgmt_uri https://spl-sh-mac02.ephemeric.lan:8089 -replication_port 34567 -replication_factor 3 -conf_deploy_fetch_url https://spl-sh-mac01.ephemeric.lan:8089 -secret mykey -shcluster_label shcluster1
 
-# Bootstrap.
-#splunk bootstrap shcluster-captain -servers_list https://spl-sh-mac02.ephemeric.lan:8089
+# Bootstrap captain (from any member).
+splunk bootstrap shcluster-captain -servers_list https://spl-sh-mac02.ephemeric.lan:8089,https://spl-sh-mac03.ephemeric.lan:8089,https://spl-sh-mac04.ephemeric.lan:8089
+
+# Add member (from member).
+splunk add shcluster-member -current_member_uri https://spl-sh-mac02.ephemeric.lan:8089
+
+# Add member (from captain).
+splunk add shcluster-member -new_member_uri https://spl-sh-mac01.ephemeric.lan:8089
+
+# Join indexer cluster.
+splunk edit cluster-config -mode searchhead -manager_uri https://spl-cm-01:8089 -secret myidxkey
+
+# Distributed search.
+splunk add search-server https://<peer>:8089 -remoteUsername <user> -remotePassword <pw>
+[raft_statemachine]
+replicate_search_peers = true
+
+# Transfer captaincy (from any member).
+splunk transfer...
+
+# Transfer captaincy (from captain).
 
 # KV Store.
-#splunk show kvstore-status
+splunk show kvstore-status
 
-# Join cluster.
-#splunk edit cluster-config -mode searchhead -manager_uri https://10.160.31.200:8089 -secret your_key
+# Members failing to join.
+splunk clean raft

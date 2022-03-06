@@ -1,10 +1,11 @@
 ---
 
-./bin/splunk edit cluster-config -mode manager -replication_factor 2 -search_factor 2 -secret gabriel-secret -cluster_label GABRIEL-CLUSTER
+splunk edit cluster-config -mode manager -replication_factor 2 -search_factor 2 -secret gabriel-secret -cluster_label GABRIEL-CLUSTER
 
-./bin/splunk edit cluster-config -mode peer -manager_uri https://10.0.8.8:8089 -replication_port 9887 -secret gabriel-secret
+splunk enable listen 9997
+splunk edit cluster-config -mode peer -manager_uri https://10.0.8.8:8089 -replication_port 9887 -secret gabriel-secret
 
 vi etc/master-apps/_cluster/local/indexes.conf
-./bin/splunk validate cluster-bundle
-./bin/splunk show cluster-bundle-status
-./splunk apply cluster-bundle
+splunk validate cluster-bundle
+splunk show cluster-bundle-status
+splunk apply cluster-bundle

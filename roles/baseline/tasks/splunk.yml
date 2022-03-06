@@ -41,8 +41,7 @@
   environment:
     RANDFILE: /opt/splunk/.rnd
   ansible.builtin.command:
-    # splunk start --accept-license  --no-prompt --answer-yes
-    cmd: /opt/splunk/bin/splunk enable boot-start -systemd-managed 1 -user splunk -group splunk --accept-license 
+    cmd: /opt/splunk/bin/splunk enable boot-start -systemd-managed 1 -user splunk -group splunk --accept-license --no-prompt --answer-yes
     creates: /etc/systemd/system/splunkd.service
   notify: splunk
 
