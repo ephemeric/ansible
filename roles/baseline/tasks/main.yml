@@ -16,9 +16,13 @@
   ansible.builtin.include_tasks: debug.yml
 
 - name: set packages install
+  tags:
+    - packages
   ansible.builtin.include_tasks: "packages-{{ ansible_os_family }}.yml"
 
 - name: set hostname config
+  tags:
+    - hostname
   ansible.builtin.include_tasks: hostname.yml
 
 - name: set users config
@@ -27,6 +31,8 @@
   ansible.builtin.include_tasks: users.yml
 
 - name: set sudo config
+  tags:
+    - sudo
   ansible.builtin.include_tasks: sudo.yml
 
 - name: set aliases config
@@ -50,17 +56,23 @@
   ansible.builtin.include_tasks: postfix.yml
 
 - name: set services config
+  tags:
+    - services
   ansible.builtin.include_tasks: services.yml
 
 - name: set SELinux config
+  tags:
+    - selinux
   ansible.builtin.include_tasks: selinux.yml
 
 - name: set GRUB config
+  tags:
+    - grub
   ansible.builtin.include_tasks: grub.yml
 
 - name: set Splunk config
   tags:
     - splunk
-  ansible.builtin.include_tasks: splunk.yml
+  ansible.builtin.include_tasks: splunk-standalone.yml
   when:
     - ansible_local.splunk.general.installed | bool == False

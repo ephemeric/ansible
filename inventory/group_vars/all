@@ -49,6 +49,28 @@ baseline:
       #  splunk SPL_HOSTS=(root) NOPASSWD:SPL_CMND
       authorized_key: False
 
+    - name: slob
+      comment: "Slob User"
+      shell: /bin/bash
+      home: /home/slob
+      create_home: True
+      groups:
+        - ''
+      uid: ''
+      gid: ''
+      system: False
+      state: present
+      sudoers: |
+        Host_Alias SPL_HOSTS=spl-*
+        # /usr/bin/sudoedit breaks!?
+        Cmnd_Alias SPL_CMND=sudoedit /opt/splunk/etc/splunk-launch.conf
+        # Must be absolute path.
+        Cmnd_Alias SYD_CMND=/bin/systemctl restart splunkd, /sbin/ss
+        slob SPL_HOSTS=(root) NOPASSWD:SYD_CMND
+        slob SPL_HOSTS=(splunk) NOPASSWD:SPL_CMND
+      authorized_key: False
+
 splunk:
   archive:
-    file: splunk-8.2.3-cd0848707637-Linux-x86_64.tgz
+    #file: splunk-8.2.3-cd0848707637-Linux-x86_64.tgz
+    file: https://download.splunk.com/products/splunk/releases/8.2.5/linux/splunk-8.2.5-77015bc7a462-Linux-x86_64.tgz

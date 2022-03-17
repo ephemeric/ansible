@@ -1,6 +1,8 @@
 ---
 
 - name: set THPs disable
+  tags:
+    - grub
   become: True
   ansible.builtin.lineinfile:
     backup: True

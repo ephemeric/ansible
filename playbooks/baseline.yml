@@ -10,7 +10,7 @@
     - name: get limit arg
       tags:
         - always
-      fail:
+      debug:
         msg: "usage: ansible-playbook playbooks/<playbook> -l|--limit"
       run_once: true
       when: ansible_limit is not defined
