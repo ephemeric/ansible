@@ -11,3 +11,10 @@
     group: root
     mode: 0600
   notify: iptables
+
+# Clone, DNAT and SNAT.
+#iptables -t mangle -A PREROUTING -i eth0 -d 10.0.10.199 -p udp –dport 12201 -m state –state NEW,ESTABLISHED,RELATED -j TEE –gateway 127.0.0.1
+#iptables -t nat -A PREROUTING -i eth0 -p udp –dport 12201 -m statistic –mode nth –every 3 –packet 0 -m state –state NEW,ESTABLISHED,RELATED -j DNAT –to-destination 10.0.10.200:12201
+#iptables -t nat -A PREROUTING -i eth0 -p udp –dport 12201 -m statistic –mode nth –every 2 –packet 0 -m state –state NEW,ESTABLISHED,RELATED -j DNAT –to-destination 10.0.10.201:12201
+#iptables -t nat -A PREROUTING -i eth0 -p udp –dport 12201 -m state –state NEW,ESTABLISHED,RELATED -j DNAT –to-destination 10.0.10.202:12201
+#iptables -t nat -A POSTROUTING -o eth0 -p udp –dport 12201 -m state –state NEW,ESTABLISHED,RELATED -j SNAT -to-source 10.0.10.199
