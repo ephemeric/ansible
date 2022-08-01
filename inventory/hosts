@@ -1,8 +1,5 @@
-[splunk]
-spl-sh-mac01.ephemeric.lan
-spl-sh-mac02.ephemeric.lan
-centos7-01.ephemeric.lan
-centos7-02.ephemeric.lan
+[ephemeric]
+splunk-01.ephemeric.lan
 
 [caa]
 ds.caa.co.za

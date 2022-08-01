@@ -4,3 +4,10 @@
 #semanage fcontext -a -t var_t "/splunk-data"
 #semanage fcontext -a -t var_log_t "/splunk-data/syslog(/.*)?"
 #restorecon -FRv /splunk-data
+
+# Validate config.
+# rsyslogd -N 1
+
+# Debug daemon foreground.
+# Debug logfile config.
+# Debug on demand config.

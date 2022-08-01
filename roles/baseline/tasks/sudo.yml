@@ -14,17 +14,6 @@
   when:
     - item.sudoers != False
 
-#[root@splunk-01 ~]# su - -s /bin/bash splunk
-#Last login: Tue Jul 26 10:48:01 UTC 2022 on pts/0
-#-bash-4.2$ shopt | grep shell
-#login_shell    	on
-#restricted_shell	off
-#
-#[root@splunk-01 ~]# sudo -su splunk
-#bash-4.2$ shopt | grep shell
-#login_shell    	off
-#restricted_shell	off
-#
 #splunk-01 :: ~ % su - -s /bin/bash splunk
 #su: using restricted shell /sbin/nologin
 #Last login: Tue Jul 26 10:54:09 UTC 2022 on pts/0
@@ -34,3 +23,6 @@
 #This is the Z Shell configuration function for new users,...
 #[splunk@splunk-01]/home/robertg% set -o | grep login
 #login                 off
+#
+#splunk-01 :: ~ % sudo -i su - -s /bin/bash splunk
+#Last login: Mon Aug  1 09:58:36 UTC 2022 on pts/0
