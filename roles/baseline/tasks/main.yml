@@ -69,10 +69,3 @@
   tags:
     - grub
   ansible.builtin.include_tasks: grub.yml
-
-- name: set Splunk config
-  tags:
-    - splunk
-  ansible.builtin.include_tasks: splunk-standalone.yml
-  when:
-    - ansible_local.splunk.general.installed | bool == False
