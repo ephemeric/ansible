@@ -4,14 +4,6 @@
   become: True
   command: grub2-mkconfig -o /boot/grub2/grub.cfg
 
-- name: splunk
-  become: True
-  ansible.builtin.systemd:
-    daemon_reload: True
-    name: splunkd
-    enabled: True
-    state: restarted
-
 - name: iptables
   become: True
   ansible.builtin.systemd:

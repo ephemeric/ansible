@@ -1,0 +1,14 @@
+---
+
+# Vars.
+- name: include OS family vars
+  tags:
+    - rsync
+  include_vars: "{{ ansible_os_family }}.yml"
+
+# Dynamic.
+- name: include rsync tasks
+  tags:
+    - rsync
+  include_tasks: rsync.yml
+  when: rsync.enabled == 1

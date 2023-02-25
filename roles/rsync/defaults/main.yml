@@ -1,0 +1,7 @@
+---
+
+rsync:
+  enabled: 1
+  src:
+    - /etc
+  dest: ""

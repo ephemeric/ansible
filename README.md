@@ -3,6 +3,16 @@ rsync -cvae ssh --chmod=D0755,F0644 --exclude="*.j2" --delete-after --progress -
 
 find /etc/ -type f -mtime -3 -print0 | tar -cvzpf "$(hostname)".tgz --exclude="/etc/oath/users" --exclude="/etc/ansible/ssh-ca/ca" --exclude="/etc/passwd" --null -T -
 
+# Control host issues. Look for hanging bash loops, .yml playbooks and RPFs.
+ps -flu ansible | grep -P "127.0.0.1:60000|bash|yml"
+
+# Remote host issues (5 S ansible 83510 83333 0 80 0 - 35332 poll_s 17:15 ? 00:00:00 sshd: ansible@notty).
+[ "$(w | grep ansible | wc -l)" -gt 1 ] && echo "bad"
+for pid in $(ps -u ansible | grep -v PID | awk '{print $1}'); do kill $pid; done
+
+# Stale SSH conenctions (no LPFs or RPFs et al.).
+ps -ef | grep -P "ssh\s\w" | grep "^ansible" | grep -iP "\s[a-z]{3}\d{2}\s"
+
 # Server: /etc/ssh/sshd_config.
 Match User c2
   AuthenticationMethods   publickey

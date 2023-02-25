@@ -1,12 +1,4 @@
 [ephemeric]
-splunk-01.ephemeric.lan
-
-[caa]
-ds.caa.co.za
-hf.caa.co.za
-idc-01.caa.co.za
-sh.caa.co.za
-mgr.caa.co.za
 
 [local]
 localhost

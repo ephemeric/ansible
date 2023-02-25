@@ -13,16 +13,3 @@
   loop: "{{ baseline.users }}"
   when:
     - item.sudoers != False
-
-#splunk-01 :: ~ % su - -s /bin/bash splunk
-#su: using restricted shell /sbin/nologin
-#Last login: Tue Jul 26 10:54:09 UTC 2022 on pts/0
-#This account is currently not available.
-#
-#splunk-01 :: ~ % sudo -su splunk
-#This is the Z Shell configuration function for new users,...
-#[splunk@splunk-01]/home/robertg% set -o | grep login
-#login                 off
-#
-#splunk-01 :: ~ % sudo -i su - -s /bin/bash splunk
-#Last login: Mon Aug  1 09:58:36 UTC 2022 on pts/0

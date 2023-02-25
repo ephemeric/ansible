@@ -1,0 +1,6 @@
+---
+
+- name: rsync remote to remote
+  hosts: rsync
+  roles:
+    - rsync

@@ -1,3 +1,0 @@
----
-
-setfacl -m u:splunk:r secure

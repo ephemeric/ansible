@@ -1,0 +1,20 @@
+---
+
+- name: rsync remote to memote
+  tags:
+    - rsync
+  command: >
+    rsync
+    --relative
+    --archive
+    --rsh=ssh
+    --out-format='CHANGED: %f'
+    {{ rsync.src.|join(' ') }}
+    {{ rsync.dest }}
+  register: reg_rsync
+  changed_when: "'CHANGED:' in reg_rsync.stdout_lines"
+
+- name: rsync print var debug
+  debug:
+    var: reg_rsync
+    verbosity: 2
