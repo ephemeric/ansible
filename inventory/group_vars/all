@@ -8,23 +8,24 @@ baseline:
       - iptables-services
     remove:
       - rpcbind
+
   services:
     disabled:
       - rpcbind.service
     enabled:
       - sshd.service
       - iptables.service
+
   users:
-    - name: robertg
+    - name: robertg1
       comment: "Robert Gabriel"
       shell: /bin/zsh
-      home: /home/robertg
-      create_home: true
+      home: /home/robertg1
+      create_home: True
       groups:
-        - ''
-      uid: ''
-      gid: ''
-      system: false
+        - 'wheel'
+      #uid: null
+      system: False
       state: present
       sudoers: |
         robertg ALL=(ALL) NOPASSWD:ALL
@@ -39,19 +40,16 @@ baseline:
 #      groups:
 #        - ''
 #      uid: ''
-#      gid: ''
 #      system: False
 #      state: present
 #      sudoers: |
 #        Host_Alias SPL_HOSTS=spl-*
-#        # /usr/bin/sudoedit breaks!?
-#        Cmnd_Alias SPL_CMND=sudoedit somefile
-#        # Must be absolute path.
-#        Cmnd_Alias SYD_CMND=/bin/systemctl restart sshd, /sbin/ss
-#        slob SPL_HOSTS=(root) NOPASSWD:SYD_CMND
-#        slob SPL_HOSTS=(splunk) NOPASSWD:SPL_CMND
+#        Cmnd_Alias SPL_CMD=sudoedit somefile
+#        Cmnd_Alias SYD_CMD=/bin/systemctl restart sshd, /sbin/ss
+#        slob SPL_HOSTS=(root) NOPASSWD:SYD_CMD
+#        slob SPL_HOSTS=(splunk) NOPASSWD:SPL_CMD
 #      authorized_key: False
 
-rsync:
-  src:
-    - /media/data/rsync
+#rsync:
+#  src:
+#    - /media/data/rsync

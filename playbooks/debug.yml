@@ -1,0 +1,11 @@
+---
+
+- hosts: localhost
+  gather_facts: false
+
+  vars:
+
+  tasks:
+  - name: debug whatever msg
+    ansible.builtin.debug:
+      msg: "{{ slobwascli }}"

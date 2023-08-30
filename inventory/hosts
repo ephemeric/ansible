@@ -1,4 +1,5 @@
 [ephemeric]
+ubuntu2004.ephemeric.lan
 
 [local]
-localhost
+localhost ansible_connection=local

@@ -1,13 +1,13 @@
 ---
 
-- name: set baseline config
+- name: baseline
   # TODO: target_hosts?
   #hosts: "{{ target_hosts | default('none') }}"
   hosts: all
   gather_facts: False
 
   pre_tasks:
-    - name: get limit arg
+    - name: usage
       tags:
         - always
       debug:

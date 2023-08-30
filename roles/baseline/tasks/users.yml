@@ -7,37 +7,15 @@
   ansible.builtin.user:
     name: "{{ item.name }}"
     comment: "{{ item.comment }}"
-    shell: "{{ item.shell }}"
+    uid: "{{ item.uid | default(omit) }}"
     home: "{{ item.home }}"
+    shell: "{{ item.shell }}"
     create_home: "{{ item.create_home }}"
-    groups: "{{ item.groups }}"
     system: "{{ item.system }}"
     state: "{{ item.state }}"
+    groups: "{{ item.groups }}"
+    append: True
   loop: "{{ baseline.users }}"
-
-- name: set user gid
-  tags:
-    - users
-  become: True
-  ansible.builtin.group:
-    name: "{{ item.name }}"
-    gid: "{{ item.gid }}"
-  loop: "{{ baseline.users }}"
-  when:
-    - item.gid is defined
-    - item.gid != ''
-
-- name: set user uid
-  tags:
-    - users
-  become: True
-  ansible.builtin.user:
-    name: "{{ item.name }}"
-    uid: "{{ item.uid }}"
-  loop: "{{ baseline.users }}"
-  when:
-    - item.uid is defined
-    - item.uid != ''
 
 - name: set user pubkey
   tags:
