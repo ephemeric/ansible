@@ -1,3 +1,4 @@
 facts/
 .DS_Store
 ansible.log
+roles/metrics.git
