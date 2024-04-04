@@ -263,3 +263,123 @@ MSG:
 
 2023-07-21 14:05:53,827 p=16031 u=robertg n=ansible | PLAY RECAP ***************************************************************************************************
 2023-07-21 14:05:53,827 p=16031 u=robertg n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-04-04 12:01:21,771 p=130267 u=robertg n=ansible | [WARNING]: Unhandled error in Python interpreter discovery for host ubuntu2004.ephemeric.lan: Failed to
+connect to the host via ssh: ssh: Could not resolve hostname ubuntu2004.ephemeric.lan: Name or service not
+known
+
+2024-04-04 12:01:21,781 p=130255 u=robertg n=ansible | ubuntu2004.ephemeric.lan | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Data could not be sent to remote host \"ubuntu2004.ephemeric.lan\". Make sure this host can be reached over ssh: ssh: Could not resolve hostname ubuntu2004.ephemeric.lan: Name or service not known\r\n",
+    "unreachable": true
+}
+2024-04-04 12:01:21,877 p=130255 u=robertg n=ansible | localhost | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2024-04-04 12:01:43,436 p=131917 u=robertg n=ansible | localhost | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2024-04-04 12:01:51,423 p=131929 u=robertg n=ansible | [WARNING]: Unhandled error in Python interpreter discovery for host ubuntu.ephemeric.lan: Failed to connect
+to the host via ssh: Warning: Permanently added 'ubuntu.ephemeric.lan' (ED25519) to the list of known hosts.
+ansible@ubuntu.ephemeric.lan: Permission denied (publickey,password).
+
+2024-04-04 12:01:51,533 p=131917 u=robertg n=ansible | ubuntu.ephemeric.lan | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Data could not be sent to remote host \"ubuntu.ephemeric.lan\". Make sure this host can be reached over ssh: ansible@ubuntu.ephemeric.lan: Permission denied (publickey,password).\r\n",
+    "unreachable": true
+}
+2024-04-04 12:01:53,234 p=132690 u=robertg n=ansible | localhost | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2024-04-04 12:01:53,368 p=132709 u=robertg n=ansible | [WARNING]: Unhandled error in Python interpreter discovery for host ubuntu.ephemeric.lan: Failed to connect
+to the host via ssh: ansible@ubuntu.ephemeric.lan: Permission denied (publickey,password).
+
+2024-04-04 12:01:53,480 p=132690 u=robertg n=ansible | ubuntu.ephemeric.lan | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Data could not be sent to remote host \"ubuntu.ephemeric.lan\". Make sure this host can be reached over ssh: ansible@ubuntu.ephemeric.lan: Permission denied (publickey,password).\r\n",
+    "unreachable": true
+}
+2024-04-04 12:02:28,762 p=135426 u=robertg n=ansible | localhost | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2024-04-04 12:02:33,363 p=135426 u=robertg n=ansible | ubuntu.ephemeric.lan | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2024-04-04 12:06:34,274 p=136253 u=robertg n=ansible | [WARNING]: Unhandled error in Python interpreter discovery for host ubuntu.vagrant.ephemeric.lan: Failed to
+connect to the host via ssh: Warning: Permanently added 'ubuntu.vagrant.ephemeric.lan' (ED25519) to the list
+of known hosts.  vagrant@ubuntu.vagrant.ephemeric.lan: Permission denied (publickey,password).
+
+2024-04-04 12:06:34,379 p=136251 u=robertg n=ansible | ubuntu.vagrant.ephemeric.lan | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Data could not be sent to remote host \"ubuntu.vagrant.ephemeric.lan\". Make sure this host can be reached over ssh: vagrant@ubuntu.vagrant.ephemeric.lan: Permission denied (publickey,password).\r\n",
+    "unreachable": true
+}
+2024-04-04 12:06:57,390 p=136330 u=robertg n=ansible | [WARNING]: Unhandled error in Python interpreter discovery for host ubuntu.vagrant.ephemeric.lan: to use the
+'ssh' connection type with passwords, you must install the sshpass program
+
+2024-04-04 12:06:57,393 p=136325 u=robertg n=ansible | ubuntu.vagrant.ephemeric.lan | FAILED! => {
+    "msg": "to use the 'ssh' connection type with passwords, you must install the sshpass program"
+}
+2024-04-04 12:07:27,182 p=136613 u=robertg n=ansible | [WARNING]: Unhandled error in Python interpreter discovery for host ubuntu.vagrant.ephemeric.lan: Failed to
+connect to the host via ssh: vagrant@ubuntu.vagrant.ephemeric.lan: Permission denied (publickey,password).
+
+2024-04-04 12:07:27,288 p=136611 u=robertg n=ansible | ubuntu.vagrant.ephemeric.lan | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Data could not be sent to remote host \"ubuntu.vagrant.ephemeric.lan\". Make sure this host can be reached over ssh: vagrant@ubuntu.vagrant.ephemeric.lan: Permission denied (publickey,password).\r\n",
+    "unreachable": true
+}
+2024-04-04 12:07:56,395 p=136642 u=robertg n=ansible |  [ERROR]: User interrupted execution
+
+2024-04-04 12:08:24,893 p=136863 u=robertg n=ansible | [WARNING]: Unhandled error in Python interpreter discovery for host ubuntu.vagrant.ephemeric.lan: Failed to
+connect to the host via ssh: vagrant@ubuntu.vagrant.ephemeric.lan: Permission denied (publickey,password).
+
+2024-04-04 12:08:25,017 p=136861 u=robertg n=ansible | ubuntu.vagrant.ephemeric.lan | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Data could not be sent to remote host \"ubuntu.vagrant.ephemeric.lan\". Make sure this host can be reached over ssh: vagrant@ubuntu.vagrant.ephemeric.lan: Permission denied (publickey,password).\r\n",
+    "unreachable": true
+}
+2024-04-04 12:08:42,574 p=136956 u=robertg n=ansible | [WARNING]: Unhandled error in Python interpreter discovery for host ubuntu.vagrant.ephemeric.lan: Failed to
+connect to the host via ssh: vagrant@ubuntu.vagrant.ephemeric.lan: Permission denied (publickey,password).
+
+2024-04-04 12:08:42,680 p=136954 u=robertg n=ansible | ubuntu.vagrant.ephemeric.lan | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Data could not be sent to remote host \"ubuntu.vagrant.ephemeric.lan\". Make sure this host can be reached over ssh: vagrant@ubuntu.vagrant.ephemeric.lan: Permission denied (publickey,password).\r\n",
+    "unreachable": true
+}
+2024-04-04 12:09:08,054 p=137160 u=robertg n=ansible | [WARNING]: Unhandled error in Python interpreter discovery for host ubuntu.vagrant.ephemeric.lan: Failed to
+connect to the host via ssh: ansible@ubuntu.vagrant.ephemeric.lan: Permission denied (publickey,password).
+
+2024-04-04 12:09:08,159 p=137158 u=robertg n=ansible | ubuntu.vagrant.ephemeric.lan | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Data could not be sent to remote host \"ubuntu.vagrant.ephemeric.lan\". Make sure this host can be reached over ssh: ansible@ubuntu.vagrant.ephemeric.lan: Permission denied (publickey,password).\r\n",
+    "unreachable": true
+}
+2024-04-04 12:09:13,688 p=137188 u=robertg n=ansible | [WARNING]: Unhandled error in Python interpreter discovery for host ubuntu.vagrant.ephemeric.lan: Failed to
+connect to the host via ssh: ansible@ubuntu.vagrant.ephemeric.lan: Permission denied (publickey,password).
+
+2024-04-04 12:09:13,794 p=137186 u=robertg n=ansible | ubuntu.vagrant.ephemeric.lan | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Data could not be sent to remote host \"ubuntu.vagrant.ephemeric.lan\". Make sure this host can be reached over ssh: ansible@ubuntu.vagrant.ephemeric.lan: Permission denied (publickey,password).\r\n",
+    "unreachable": true
+}
+2024-04-04 12:09:22,770 p=137251 u=robertg n=ansible | ubuntu.vagrant.ephemeric.lan | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2024-04-04 12:09:30,077 p=137320 u=robertg n=ansible | ubuntu.vagrant.ephemeric.lan | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
