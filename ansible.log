@@ -440,3 +440,206 @@ The offending line appears to be:
   - name: Create ad application
     ^ here
 
+2024-07-01 13:02:00,953 p=20653 u=robertg n=ansible | ERROR! the field 'hosts' is required but was not set
+2024-07-01 13:03:30,874 p=20804 u=robertg n=ansible | PLAY [Create ad application] *********************************************************************************
+2024-07-01 13:03:30,998 p=20804 u=robertg n=ansible | TASK [Create ad application] *********************************************************************************
+2024-07-01 13:03:31,023 p=20804 u=robertg n=ansible | fatal: [localhost]: FAILED! => {}
+
+MSG:
+
+The task includes an option with an undefined variable. The error was: 'display_name' is undefined
+
+The error appears to be in '/Users/robertg/ephemeric/ansible.git/playbooks/az-app-reg.yml': line 6, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  tasks:
+  - name: Create ad application
+    ^ here
+
+
+2024-07-01 13:03:31,024 p=20804 u=robertg n=ansible | PLAY RECAP ***************************************************************************************************
+2024-07-01 13:03:31,024 p=20804 u=robertg n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-07-01 13:03:57,657 p=20866 u=robertg n=ansible | [DEPRECATION WARNING]: Specifying a list of dictionaries for vars is deprecated in favor of specifying a 
+dictionary. This feature will be removed in version 2.18. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2024-07-01 13:03:57,679 p=20866 u=robertg n=ansible | PLAY [Create ad application] *********************************************************************************
+2024-07-01 13:03:57,726 p=20866 u=robertg n=ansible | TASK [Create ad application] *********************************************************************************
+2024-07-01 13:03:58,377 p=20866 u=robertg n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: ModuleNotFoundError: No module named 'packaging'
+2024-07-01 13:03:58,378 p=20866 u=robertg n=ansible | [WARNING]: Platform darwin on host localhost is using the discovered Python interpreter at
+/usr/local/bin/python3.12, but future installation of another Python interpreter could change the meaning of
+that path. See https://docs.ansible.com/ansible-core/2.17/reference_appendices/interpreter_discovery.html for
+more information.
+
+2024-07-01 13:03:58,378 p=20866 u=robertg n=ansible | fatal: [localhost]: FAILED! => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/local/bin/python3.12"
+    },
+    "changed": false
+}
+
+MSG:
+
+Failed to import the required Python library (packaging) on macos.ephemeric.lan's Python /usr/local/opt/python@3.12/bin/python3.12. Please read the module documentation and install it in the appropriate location. If the required library is installed, but Ansible is using the wrong Python interpreter, please consult the documentation on ansible_python_interpreter
+
+2024-07-01 13:03:58,379 p=20866 u=robertg n=ansible | PLAY RECAP ***************************************************************************************************
+2024-07-01 13:03:58,380 p=20866 u=robertg n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-07-01 13:04:31,555 p=20963 u=robertg n=ansible | PLAY [Create ad application] *********************************************************************************
+2024-07-01 13:04:31,598 p=20963 u=robertg n=ansible | TASK [Create ad application] *********************************************************************************
+2024-07-01 13:04:32,186 p=20963 u=robertg n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: ModuleNotFoundError: No module named 'packaging'
+2024-07-01 13:04:32,187 p=20963 u=robertg n=ansible | [WARNING]: Platform darwin on host localhost is using the discovered Python interpreter at
+/usr/local/bin/python3.12, but future installation of another Python interpreter could change the meaning of
+that path. See https://docs.ansible.com/ansible-core/2.17/reference_appendices/interpreter_discovery.html for
+more information.
+
+2024-07-01 13:04:32,188 p=20963 u=robertg n=ansible | fatal: [localhost]: FAILED! => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/local/bin/python3.12"
+    },
+    "changed": false
+}
+
+MSG:
+
+Failed to import the required Python library (packaging) on macos.ephemeric.lan's Python /usr/local/opt/python@3.12/bin/python3.12. Please read the module documentation and install it in the appropriate location. If the required library is installed, but Ansible is using the wrong Python interpreter, please consult the documentation on ansible_python_interpreter
+
+2024-07-01 13:04:32,189 p=20963 u=robertg n=ansible | PLAY RECAP ***************************************************************************************************
+2024-07-01 13:04:32,189 p=20963 u=robertg n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-07-01 13:16:24,860 p=21771 u=robertg n=ansible | PLAY [Create ad application] *********************************************************************************
+2024-07-01 13:16:24,945 p=21771 u=robertg n=ansible | TASK [Create ad application] *********************************************************************************
+2024-07-01 13:16:25,558 p=21771 u=robertg n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: ModuleNotFoundError: No module named 'packaging'
+2024-07-01 13:16:25,559 p=21771 u=robertg n=ansible | [WARNING]: Platform darwin on host localhost is using the discovered Python interpreter at
+/usr/local/bin/python3.12, but future installation of another Python interpreter could change the meaning of
+that path. See https://docs.ansible.com/ansible-core/2.17/reference_appendices/interpreter_discovery.html for
+more information.
+
+2024-07-01 13:16:25,560 p=21771 u=robertg n=ansible | fatal: [localhost]: FAILED! => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/local/bin/python3.12"
+    },
+    "changed": false
+}
+
+MSG:
+
+Failed to import the required Python library (packaging) on macos.ephemeric.lan's Python /usr/local/opt/python@3.12/bin/python3.12. Please read the module documentation and install it in the appropriate location. If the required library is installed, but Ansible is using the wrong Python interpreter, please consult the documentation on ansible_python_interpreter
+
+2024-07-01 13:16:25,560 p=21771 u=robertg n=ansible | PLAY RECAP ***************************************************************************************************
+2024-07-01 13:16:25,561 p=21771 u=robertg n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-07-01 13:24:59,455 p=21929 u=robertg n=ansible | PLAY [Create ad application] *********************************************************************************
+2024-07-01 13:24:59,500 p=21929 u=robertg n=ansible | TASK [Create ad application] *********************************************************************************
+2024-07-01 13:25:00,124 p=21929 u=robertg n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: ModuleNotFoundError: No module named 'packaging'
+2024-07-01 13:25:00,124 p=21929 u=robertg n=ansible | [WARNING]: Platform darwin on host localhost is using the discovered Python interpreter at
+/usr/local/bin/python3.12, but future installation of another Python interpreter could change the meaning of
+that path. See https://docs.ansible.com/ansible-core/2.17/reference_appendices/interpreter_discovery.html for
+more information.
+
+2024-07-01 13:25:00,125 p=21929 u=robertg n=ansible | fatal: [localhost]: FAILED! => {
+    "changed": false
+}
+
+MSG:
+
+Failed to import the required Python library (packaging) on macos.ephemeric.lan's Python /usr/local/opt/python@3.12/bin/python3.12. Please read the module documentation and install it in the appropriate location. If the required library is installed, but Ansible is using the wrong Python interpreter, please consult the documentation on ansible_python_interpreter
+
+2024-07-01 13:25:00,126 p=21929 u=robertg n=ansible | PLAY RECAP ***************************************************************************************************
+2024-07-01 13:25:00,126 p=21929 u=robertg n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-07-01 13:25:05,500 p=21991 u=robertg n=ansible | ansible-playbook [core 2.17.1]
+  config file = /Users/robertg/ephemeric/ansible.git/ansible.cfg
+  configured module search path = ['/Users/robertg/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/Cellar/ansible/10.1.0/libexec/lib/python3.12/site-packages/ansible
+  ansible collection location = /Users/robertg/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.12.4 (main, Jun  6 2024, 18:26:44) [Clang 15.0.0 (clang-1500.1.0.2.5)] (/usr/local/Cellar/ansible/10.1.0/libexec/bin/python)
+  jinja version = 3.1.4
+  libyaml = True
+2024-07-01 13:25:05,501 p=21991 u=robertg n=ansible | Using /Users/robertg/ephemeric/ansible.git/ansible.cfg as config file
+2024-07-01 13:25:05,610 p=21991 u=robertg n=ansible | host_list declined parsing /Users/robertg/ephemeric/ansible.git/inventory/hosts as it did not pass its verify_file() method
+2024-07-01 13:25:05,610 p=21991 u=robertg n=ansible | script declined parsing /Users/robertg/ephemeric/ansible.git/inventory/hosts as it did not pass its verify_file() method
+2024-07-01 13:25:05,610 p=21991 u=robertg n=ansible | auto declined parsing /Users/robertg/ephemeric/ansible.git/inventory/hosts as it did not pass its verify_file() method
+2024-07-01 13:25:05,613 p=21991 u=robertg n=ansible | Parsed /Users/robertg/ephemeric/ansible.git/inventory/hosts inventory source with ini plugin
+2024-07-01 13:25:05,793 p=21991 u=robertg n=ansible | redirecting (type: callback) ansible.builtin.debug to ansible.posix.debug
+2024-07-01 13:25:05,794 p=21991 u=robertg n=ansible | redirecting (type: callback) ansible.builtin.debug to ansible.posix.debug
+2024-07-01 13:25:05,807 p=21991 u=robertg n=ansible | Skipping callback 'default', as we already have a stdout callback.
+2024-07-01 13:25:05,807 p=21991 u=robertg n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2024-07-01 13:25:05,807 p=21991 u=robertg n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2024-07-01 13:25:05,807 p=21991 u=robertg n=ansible | PLAYBOOK: az-app-reg.yml *************************************************************************************
+2024-07-01 13:25:05,808 p=21991 u=robertg n=ansible | 1 plays in playbooks/az-app-reg.yml
+2024-07-01 13:25:05,809 p=21991 u=robertg n=ansible | PLAY [Create ad application] *********************************************************************************
+2024-07-01 13:25:05,852 p=21991 u=robertg n=ansible | TASK [Create ad application] *********************************************************************************
+2024-07-01 13:25:05,874 p=21991 u=robertg n=ansible | <localhost> ESTABLISH LOCAL CONNECTION FOR USER: robertg
+2024-07-01 13:25:05,875 p=21991 u=robertg n=ansible | <localhost> EXEC /bin/sh -c 'echo ~robertg && sleep 0'
+2024-07-01 13:25:05,891 p=21991 u=robertg n=ansible | <localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/robertg/.ansible/tmp `"&& mkdir "` echo /Users/robertg/.ansible/tmp/ansible-tmp-1719833105.8905768-21993-37499393271906 `" && echo ansible-tmp-1719833105.8905768-21993-37499393271906="` echo /Users/robertg/.ansible/tmp/ansible-tmp-1719833105.8905768-21993-37499393271906 `" ) && sleep 0'
+2024-07-01 13:25:06,036 p=21991 u=robertg n=ansible | <localhost> Attempting python interpreter discovery
+2024-07-01 13:25:06,037 p=21991 u=robertg n=ansible | <localhost> EXEC /bin/sh -c 'echo PLATFORM; uname; echo FOUND; command -v '"'"'python3.12'"'"'; command -v '"'"'python3.11'"'"'; command -v '"'"'python3.10'"'"'; command -v '"'"'python3.9'"'"'; command -v '"'"'python3.8'"'"'; command -v '"'"'python3.7'"'"'; command -v '"'"'/usr/bin/python3'"'"'; command -v '"'"'python3'"'"'; echo ENDFOUND && sleep 0'
+2024-07-01 13:25:06,161 p=21991 u=robertg n=ansible | <localhost> Python interpreter discovery fallback (unsupported platform for extended discovery: darwin)
+2024-07-01 13:25:06,163 p=21991 u=robertg n=ansible | Using module file /usr/local/Cellar/ansible/10.1.0/libexec/lib/python3.12/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_adapplication.py
+2024-07-01 13:25:06,164 p=21991 u=robertg n=ansible | <localhost> PUT /Users/robertg/.ansible/tmp/ansible-local-2199184s0o1ky/tmpfk34unkr TO /Users/robertg/.ansible/tmp/ansible-tmp-1719833105.8905768-21993-37499393271906/AnsiballZ_azure_rm_adapplication.py
+2024-07-01 13:25:06,164 p=21991 u=robertg n=ansible | <localhost> EXEC /bin/sh -c 'chmod u+x /Users/robertg/.ansible/tmp/ansible-tmp-1719833105.8905768-21993-37499393271906/ /Users/robertg/.ansible/tmp/ansible-tmp-1719833105.8905768-21993-37499393271906/AnsiballZ_azure_rm_adapplication.py && sleep 0'
+2024-07-01 13:25:06,180 p=21991 u=robertg n=ansible | <localhost> EXEC /bin/sh -c '/usr/local/bin/python3.12 /Users/robertg/.ansible/tmp/ansible-tmp-1719833105.8905768-21993-37499393271906/AnsiballZ_azure_rm_adapplication.py && sleep 0'
+2024-07-01 13:25:06,438 p=21991 u=robertg n=ansible | <localhost> EXEC /bin/sh -c 'rm -f -r /Users/robertg/.ansible/tmp/ansible-tmp-1719833105.8905768-21993-37499393271906/ > /dev/null 2>&1 && sleep 0'
+2024-07-01 13:25:06,460 p=21991 u=robertg n=ansible | The full traceback is:
+Traceback (most recent call last):
+  File "/var/folders/rf/q47td8qx6z5dz0cfqj3lppzm0000gp/T/ansible_azure.azcollection.azure_rm_adapplication_payload_382vxzia/ansible_azure.azcollection.azure_rm_adapplication_payload.zip/ansible_collections/azure/azcollection/plugins/module_utils/azure_rm_common.py", line 232, in <module>
+    from packaging.version import Version
+ModuleNotFoundError: No module named 'packaging'
+
+2024-07-01 13:25:06,460 p=21991 u=robertg n=ansible | [WARNING]: Platform darwin on host localhost is using the discovered Python interpreter at
+/usr/local/bin/python3.12, but future installation of another Python interpreter could change the meaning of
+that path. See https://docs.ansible.com/ansible-core/2.17/reference_appendices/interpreter_discovery.html for
+more information.
+
+2024-07-01 13:25:06,461 p=21991 u=robertg n=ansible | fatal: [localhost]: FAILED! => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "ad_user": null,
+            "adfs_authority_url": null,
+            "allow_guests_sign_in": null,
+            "api_profile": "latest",
+            "app_id": null,
+            "app_roles": null,
+            "auth_source": "auto",
+            "available_to_other_tenants": null,
+            "cert_validation_mode": null,
+            "client_id": null,
+            "cloud_environment": "AzureCloud",
+            "credential_description": null,
+            "disable_instance_discovery": false,
+            "display_name": "slobwashere",
+            "end_date": null,
+            "homepage": null,
+            "identifier_uris": null,
+            "key_type": "AsymmetricX509Cert",
+            "key_usage": "Verify",
+            "key_value": null,
+            "log_mode": null,
+            "log_path": null,
+            "native_app": null,
+            "oauth2_allow_implicit_flow": null,
+            "optional_claims": null,
+            "password": null,
+            "profile": null,
+            "public_client_reply_urls": null,
+            "required_resource_accesses": null,
+            "secret": null,
+            "sign_in_audience": null,
+            "spa_reply_urls": null,
+            "start_date": null,
+            "state": "present",
+            "subscription_id": null,
+            "tenant": null,
+            "thumbprint": null,
+            "web_reply_urls": null,
+            "x509_certificate_path": null
+        }
+    }
+}
+
+MSG:
+
+Failed to import the required Python library (packaging) on macos.ephemeric.lan's Python /usr/local/opt/python@3.12/bin/python3.12. Please read the module documentation and install it in the appropriate location. If the required library is installed, but Ansible is using the wrong Python interpreter, please consult the documentation on ansible_python_interpreter
+
+2024-07-01 13:25:06,462 p=21991 u=robertg n=ansible | PLAY RECAP ***************************************************************************************************
+2024-07-01 13:25:06,463 p=21991 u=robertg n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   

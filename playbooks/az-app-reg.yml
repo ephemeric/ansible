@@ -1,8 +1,12 @@
 ---
 
 - name: Create ad application
-- hosts: localhost
-- tasks:
+  hosts: localhost
+  vars:
+    display_name: "slobwashere"
+  tasks:
+
   - name: Create ad application
-    azure_rm_adapplication:
+    azure.azcollection.azure_rm_adapplication:
       display_name: "{{ display_name }}"
+    delegate_to: localhost
