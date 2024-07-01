@@ -383,3 +383,60 @@ connect to the host via ssh: ansible@ubuntu.vagrant.ephemeric.lan: Permission de
     "changed": false,
     "ping": "pong"
 }
+2024-06-30 20:38:44,109 p=9461 u=robertg n=ansible | Starting galaxy collection install process
+2024-06-30 20:38:44,437 p=9461 u=robertg n=ansible | Nothing to do. All requested collections are already installed. If you want to reinstall them, consider using `--force`.
+2024-06-30 20:42:28,724 p=9889 u=robertg n=ansible | ERROR! 'azure_rm_adapplication' is not a valid attribute for a Play
+
+The error appears to be in '/Users/robertg/ephemeric/ansible.git/playbooks/az-app-reg.yml': line 1, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Create ad application
+  ^ here
+
+2024-06-30 20:44:37,305 p=10011 u=robertg n=ansible | ERROR! couldn't resolve module/action 'azure_rm_adapplication'. This often indicates a misspelling, missing collection, or incorrect module path.
+
+The error appears to be in '/Users/robertg/ephemeric/ansible.git/playbooks/az-app-reg.yml': line 6, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+- tasks:
+  - name: Create ad application
+    ^ here
+
+2024-06-30 20:46:50,202 p=10289 u=robertg n=ansible | ERROR! couldn't resolve module/action 'azure_rm_adapplication'. This often indicates a misspelling, missing collection, or incorrect module path.
+
+The error appears to be in '/Users/robertg/ephemeric/ansible.git/playbooks/az-app-reg.yml': line 6, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+- tasks:
+  - name: Create ad application
+    ^ here
+
+2024-06-30 20:47:39,379 p=10360 u=robertg n=ansible | ERROR! couldn't resolve module/action 'azure_rm_adapplication'. This often indicates a misspelling, missing collection, or incorrect module path.
+
+The error appears to be in '/Users/robertg/ephemeric/ansible.git/playbooks/az-app-reg.yml': line 6, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+- tasks:
+  - name: Create ad application
+    ^ here
+
+2024-06-30 20:49:31,732 p=10504 u=robertg n=ansible | ERROR! couldn't resolve module/action 'azure_rm_adapplication'. This often indicates a misspelling, missing collection, or incorrect module path.
+
+The error appears to be in '/Users/robertg/ephemeric/ansible.git/playbooks/az-app-reg.yml': line 6, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+- tasks:
+  - name: Create ad application
+    ^ here
+

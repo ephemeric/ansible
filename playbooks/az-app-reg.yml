@@ -1,0 +1,8 @@
+---
+
+- name: Create ad application
+- hosts: localhost
+- tasks:
+  - name: Create ad application
+    azure_rm_adapplication:
+      display_name: "{{ display_name }}"
